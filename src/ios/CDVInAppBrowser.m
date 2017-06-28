@@ -435,7 +435,7 @@
         }
     }
     //if is an app store link, let the system handle it, otherwise it fails to load it
-    else if ([[ url scheme] isEqualToString:@"itms-appss"] || [[ url scheme] isEqualToString:@"itms-apps"]||[[ url scheme] isEqualToString:@"whatsapp"]||[[url].hasPrefix("https://www.facebook.com")]) {
+    else if ([[ url scheme] isEqualToString:@"itms-appss"] || [[ url scheme] isEqualToString:@"itms-apps"]||[[ url scheme] isEqualToString:@"whatsapp"]||url.hasPrefix("https://www.facebook.com")) {
         [theWebView stopLoading];
         [self openInSystem:url];
         return NO;
