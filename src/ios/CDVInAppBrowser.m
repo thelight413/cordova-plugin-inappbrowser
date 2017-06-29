@@ -594,7 +594,7 @@
     self.toolbar.clearsContextBeforeDrawing = NO;
     self.toolbar.clipsToBounds = NO;
     self.toolbar.contentMode = UIViewContentModeScaleToFill;
-    self.toolbar.hidden = YES;
+    self.toolbar.hidden = NO;
     self.toolbar.multipleTouchEnabled = NO;
     self.toolbar.opaque = YES;
     self.toolbar.backgroundColor = [UIColor colorWithRed:0.26 green:0.56 blue:0.93 alpha:1.0];
@@ -912,11 +912,11 @@
     self.addressLabel.text = [self.currentURL absoluteString];
     self.backButton.enabled = theWebView.canGoBack;
     self.forwardButton.enabled = theWebView.canGoForward;
-    if(!theWebView.canGoBack) {
-    	self.toolbar.hidden = YES;
-    }else{
-        self.toolbar.hidden = NO;
-    }
+    //if(!theWebView.canGoBack) {
+    	//self.toolbar.hidden = YES;
+    //}else{
+        //self.toolbar.hidden = NO;
+    //}
     [self.spinner stopAnimating];
 
     // Work around a bug where the first time a PDF is opened, all UIWebViews
