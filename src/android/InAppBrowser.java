@@ -832,10 +832,11 @@ public class InAppBrowser extends CordovaPlugin {
             final Intent customSchemeIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
             final PackageManager packageManager = cordova.getActivity().getApplicationContext().getPackageManager();
             final List<ResolveInfo> resolvedActivities = packageManager.queryIntentActivities(customSchemeIntent, 0);
-
+             Log.d("here",url);
             String newloc = "";
             if (url.startsWith("http:") || url.startsWith("https:") || url.startsWith("file:")) {
                 newloc = url;
+                   
             } else if (url.startsWith(WebView.SCHEME_TEL)) {
                 try {
                     Intent intent = new Intent(Intent.ACTION_DIAL);
