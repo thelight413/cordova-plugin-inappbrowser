@@ -952,7 +952,7 @@ public class InAppBrowser extends CordovaPlugin {
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
                if(url.equals(homepage)){
-                       String html = "document.getElementsByClassName('.td-header-wrap.td-header-style-6')[0].display = 'block!important;'";
+                       String html = "document.getElementsByClassName('td-header-wrap td-header-style-6')[0].display = 'block!important;'";
                        injectDeferredObject(html,null);
                 }else{
                      String html = "document.getElementsByClassName('td-header-wrap td-header-style-6')[0].display = 'none!important;'";
