@@ -594,7 +594,7 @@
     self.toolbar.clearsContextBeforeDrawing = NO;
     self.toolbar.clipsToBounds = NO;
     self.toolbar.contentMode = UIViewContentModeScaleToFill;
-    self.toolbar.hidden = NO;
+    self.toolbar.hidden = YES;
     self.toolbar.multipleTouchEnabled = NO;
     self.toolbar.opaque = YES;
     self.toolbar.backgroundColor = [UIColor colorWithRed:0.26 green:0.56 blue:0.93 alpha:1.0];
