@@ -842,8 +842,6 @@ public class InAppBrowser extends CordovaPlugin {
                 newloc = url;
                    if(!url.equals(homepage)){
                        main.addView(toolbar);
-                   }else{
-                       main.removeView(toolbar);
                    }
                    
             } else if (url.startsWith(WebView.SCHEME_TEL)) {
