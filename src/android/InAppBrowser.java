@@ -947,9 +947,11 @@ public class InAppBrowser extends CordovaPlugin {
             super.onPageFinished(view, url);
            if(url.equals(homepage)){
                       toolbar.setVisibility(View.GONE);
-                       String html = "$('.td-header-wrap.td-header-style-6').hide();";
+                       String html = "$('.td-header-wrap.td-header-style-6').css('display','none!important');";
                        injectDeferredObject(html,null);
                 }else{
+                   String html = "$('.td-header-wrap.td-header-style-6').css('display','block!important');";
+                  injectDeferredObject(html,null);
                      toolbar.setVisibility(View.VISIBLE);
                 }
             // CB-10395 InAppBrowser's WebView not storing cookies reliable to local device storage
