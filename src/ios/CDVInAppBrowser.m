@@ -634,6 +634,8 @@
     NSString* frontArrowString = NSLocalizedString(@"►", nil); // create arrow from Unicode char
     self.forwardButton = [[UIBarButtonItem alloc] initWithTitle:frontArrowString style:UIBarButtonItemStylePlain target:self action:@selector(goForward:)];
     self.forwardButton.enabled = YES;
+    self.forwardButton.tintColor = [UIColor colorWithWhite:1.000 alpha:1.000];
+
     self.forwardButton.imageInsets = UIEdgeInsetsZero;
 
     NSString* backArrowString = NSLocalizedString(@"◄", nil); // create arrow from Unicode char
@@ -644,7 +646,7 @@
 
     [self.toolbar setItems:@[self.backButton,flexibleSpaceButton,self.forwardButton]];
 
-    self.view.backgroundColor = [UIColor grayColor];
+    self.view.backgroundColor = [UIColor colorWithRed:0.10 green:0.22 blue:0.36 alpha:1.0];
     [self.view addSubview:self.toolbar];
     [self.view addSubview:self.addressLabel];
     [self.view addSubview:self.spinner];
