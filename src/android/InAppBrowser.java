@@ -745,7 +745,7 @@ public class InAppBrowser extends CordovaPlugin {
                 //toolbar.addView(close);
 
                 // Don't add the toolbar if its been disabled
-                if (getShowLocationBar()&&url!=homepage) {
+                if (getShowLocationBar()&&1==0) {
                     // Add our toolbar to our main view/layout
                     main.addView(toolbar);
                 }
