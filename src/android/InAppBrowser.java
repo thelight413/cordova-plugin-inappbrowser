@@ -848,7 +848,6 @@ public class InAppBrowser extends CordovaPlugin {
                 newloc = url;
                    
                   if(!url.equals(homepage)){
-                         Log.d("equals","not");
                      main.addView(toolbar);
                   }
                    
