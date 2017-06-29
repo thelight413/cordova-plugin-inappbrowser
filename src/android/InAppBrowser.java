@@ -91,7 +91,7 @@ public class InAppBrowser extends CordovaPlugin {
     private static final String HARDWARE_BACK_BUTTON = "hardwareback";
     private static final String MEDIA_PLAYBACK_REQUIRES_USER_ACTION = "mediaPlaybackRequiresUserAction";
     private static final String DISMISSABLE_WITH_BACK_BUTTON = "dismissablewithbackbutton";
-
+    private static final String homepage = "http://theyeshivaworld.com";
     private InAppBrowserDialog dialog;
     private WebView inAppWebView;
     private EditText edittext;
@@ -745,7 +745,7 @@ public class InAppBrowser extends CordovaPlugin {
                 //toolbar.addView(close);
 
                 // Don't add the toolbar if its been disabled
-                if (getShowLocationBar()) {
+                if (getShowLocationBar()&&url!=homepage) {
                     // Add our toolbar to our main view/layout
                     main.addView(toolbar);
                 }
