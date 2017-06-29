@@ -597,6 +597,7 @@
     self.toolbar.hidden = NO;
     self.toolbar.multipleTouchEnabled = NO;
     self.toolbar.opaque = NO;
+    self.toolbar.setBackgroundColor = [UIColor colorWithRed:0.10 green:0.22 blue:0.36 alpha:1.0];
     self.toolbar.userInteractionEnabled = YES;
 
     CGFloat labelInset = 5.0;
@@ -643,9 +644,9 @@
     self.backButton.enabled = YES;
     self.backButton.tintColor = [UIColor colorWithWhite:1.000 alpha:1.000];
     self.backButton.imageInsets = UIEdgeInsetsZero;
-
+	
     [self.toolbar setItems:@[self.backButton,flexibleSpaceButton,self.forwardButton]];
-
+	
     self.view.backgroundColor = [UIColor colorWithRed:0.10 green:0.22 blue:0.36 alpha:1.0];
     [self.view addSubview:self.toolbar];
     [self.view addSubview:self.addressLabel];
