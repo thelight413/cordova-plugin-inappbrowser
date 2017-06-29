@@ -618,7 +618,7 @@ public class InAppBrowser extends CordovaPlugin {
                 // Forward button
                 ImageButton forward = new ImageButton(cordova.getActivity());
                 RelativeLayout.LayoutParams forwardLayoutParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
-                forwardLayoutParams.addRule(RelativeLayout.ALIGN_RIGHT);
+                forwardLayoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
                 forward.setLayoutParams(forwardLayoutParams);
                 forward.setContentDescription("Forward Button");
                 forward.setId(Integer.valueOf(3));
