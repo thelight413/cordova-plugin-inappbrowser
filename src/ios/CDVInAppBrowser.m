@@ -614,7 +614,7 @@
     self.addressLabel.clipsToBounds = YES;
     self.addressLabel.contentMode = UIViewContentModeScaleToFill;
     self.addressLabel.enabled = YES;
-    self.addressLabel.hidden = NO;
+    self.addressLabel.hidden = YES;
     self.addressLabel.lineBreakMode = NSLineBreakByTruncatingTail;
 
     if ([self.addressLabel respondsToSelector:NSSelectorFromString(@"setMinimumScaleFactor:")]) {
