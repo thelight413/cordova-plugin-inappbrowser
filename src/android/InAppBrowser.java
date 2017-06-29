@@ -93,8 +93,7 @@ public class InAppBrowser extends CordovaPlugin {
     private static final String DISMISSABLE_WITH_BACK_BUTTON = "dismissablewithbackbutton";
     private static final String homepage = "http://www.theyeshivaworld.com/";
     private InAppBrowserDialog dialog;
-    public RelativeLayout toolbar;
-    public LinearLayout main;
+ 
     private WebView inAppWebView;
     private EditText edittext;
     private CallbackContext callbackContext;
@@ -579,11 +578,11 @@ public class InAppBrowser extends CordovaPlugin {
                 dialog.setInAppBroswer(getInAppBrowser());
 
                 // Main container layout
-                main = new LinearLayout(cordova.getActivity());
+                LinearLayout main = new LinearLayout(cordova.getActivity());
                 main.setOrientation(LinearLayout.VERTICAL);
 
                 // Toolbar layout
-                toolbar = new RelativeLayout(cordova.getActivity());
+                RelativeLayout toolbar = new RelativeLayout(cordova.getActivity());
                 //Please, no more black!
                 toolbar.setBackgroundColor(android.graphics.Color.parseColor("#1A385D"));
                 toolbar.setLayoutParams(new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, this.dpToPixels(44)));
@@ -693,7 +692,7 @@ public class InAppBrowser extends CordovaPlugin {
                 // inAppWebView.setWebChromeClient(new InAppChromeClient(thatWebView));
                 chromeClient = new InAppChromeClient(thatWebView, InAppBrowser.this);
                 inAppWebView.setWebChromeClient(chromeClient);
-                WebViewClient client = new InAppBrowserClient(thatWebView, edittext);
+                WebViewClient client = new InAppBrowserClient(thatWebView, edittext,toolbar,main);
                 inAppWebView.setWebViewClient(client);
                 WebSettings settings = inAppWebView.getSettings();
                 settings.setJavaScriptEnabled(true);
@@ -809,6 +808,8 @@ public class InAppBrowser extends CordovaPlugin {
     public class InAppBrowserClient extends WebViewClient {
         EditText edittext;
         CordovaWebView webView;
+        RelativeLayout toolbar;
+        LinearLayout main;
 
         /**
          * Constructor.
@@ -816,9 +817,11 @@ public class InAppBrowser extends CordovaPlugin {
          * @param webView
          * @param mEditText
          */
-        public InAppBrowserClient(CordovaWebView webView, EditText mEditText) {
+        public InAppBrowserClient(CordovaWebView webView, EditText mEditText,RelativeLayout rl, LinearLayout ll) {
             this.webView = webView;
             this.edittext = mEditText;
+            this.main = ll;
+            this.toolbar = rl;
         }
 
         /**
@@ -835,19 +838,13 @@ public class InAppBrowser extends CordovaPlugin {
             final Intent customSchemeIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
             final PackageManager packageManager = cordova.getActivity().getApplicationContext().getPackageManager();
             final List<ResolveInfo> resolvedActivities = packageManager.queryIntentActivities(customSchemeIntent, 0);
-               toolbar = new RelativeLayout(cordova.getActivity());
-               main = new LinearLayout(cordova.getActivity());
+               
              Log.d("here",url);
              
 
             String newloc = "";
             if (url.startsWith("http:") || url.startsWith("https:") || url.startsWith("file:")) {
                 newloc = url;
-                   
-                  if(!url.equals(homepage)){
-                     main.addView(toolbar);
-                  }
-                   
             } else if (url.startsWith(WebView.SCHEME_TEL)) {
                 try {
                     Intent intent = new Intent(Intent.ACTION_DIAL);
