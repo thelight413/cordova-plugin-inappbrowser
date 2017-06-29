@@ -841,6 +841,7 @@ public class InAppBrowser extends CordovaPlugin {
             if (url.startsWith("http:") || url.startsWith("https:") || url.startsWith("file:")) {
                 newloc = url;
                    if(!url.equals(homepage)){
+                          Log.d("here",homepage);
                        main.addView(toolbar);
                    }
                    
