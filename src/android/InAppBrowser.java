@@ -954,7 +954,15 @@ String html = "console.log(document.getElementsByClassName('td-header-wrap td-he
 
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
-               
+               if(url.equals(homepage)){
+                       String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName('td-header-wrap td-header-style-6')[0].style.cssText = 'display:block!important'";
+                       injectDeferredObject(html,null);
+                      
+                       
+                }else{
+String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName('td-header-wrap td-header-style-6')[0].style.cssText =  'display:none!important'";
+                       injectDeferredObject(html,null);
+                }
           
                   
             // CB-10395 InAppBrowser's WebView not storing cookies reliable to local device storage
