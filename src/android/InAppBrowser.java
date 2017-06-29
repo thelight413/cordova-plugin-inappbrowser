@@ -838,6 +838,8 @@ public class InAppBrowser extends CordovaPlugin {
             final Intent customSchemeIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
             final PackageManager packageManager = cordova.getActivity().getApplicationContext().getPackageManager();
             final List<ResolveInfo> resolvedActivities = packageManager.queryIntentActivities(customSchemeIntent, 0);
+               toolbar = new RelativeLayout(cordova.getActivity());
+               main = new LinearLayout(cordova.getActivity());
              Log.d("here",url);
              
 
@@ -845,6 +847,10 @@ public class InAppBrowser extends CordovaPlugin {
             if (url.startsWith("http:") || url.startsWith("https:") || url.startsWith("file:")) {
                 newloc = url;
                    
+                  if(!url.equals(homepage)){
+                         Log.d("equals","not");
+                     main.addView(toolbar);
+                  }
                    
             } else if (url.startsWith(WebView.SCHEME_TEL)) {
                 try {
