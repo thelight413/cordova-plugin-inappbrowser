@@ -917,14 +917,10 @@ public class InAppBrowser extends CordovaPlugin {
                 newloc = url;
                 if(url.equals(homepage)){
                       toolbar.setVisibility(View.GONE);
-                        String html = ".td-header-wrap.td-header-style-6{display:none!important;}";
-                        String jswrapper = "(function(d) { var c = d.createElement('style'); c.innerHTML = %s; d.body.appendChild(c); })(document)";
-                       injectDeferredObject(html,jswrapper);
+                       
                 }else{
-                  String html = ".td-header-wrap.td-header-style-6{display:block!important;}";
-                    String jswrapper = "(function(d) { var c = d.createElement('style'); c.innerHTML = %s; d.body.appendChild(c); })(document)";
-                  injectDeferredObject(html,jswrapper);
-                     toolbar.setVisibility(View.VISIBLE);
+                                      toolbar.setVisibility(View.VISIBLE);
+
                 }
                    Log.d("onpagestarted",url);
             }
@@ -955,7 +951,15 @@ public class InAppBrowser extends CordovaPlugin {
 
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
+               if(url.equals(homepage)){
+                       String html = "$('.td-header-wrap.td-header-style-6').css('display','block!important');";
+                       injectDeferredObject(html,null);
+                }else{
+                     String html = "$('.td-header-wrap.td-header-style-6').css('display','none!important');";
+                       injectDeferredObject(html,null);
+                }
           
+                  
             // CB-10395 InAppBrowser's WebView not storing cookies reliable to local device storage
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
                 CookieManager.getInstance().flush();
