@@ -921,7 +921,7 @@ public class InAppBrowser extends CordovaPlugin {
                          Log.d("here",homepage);
                        main.addView(toolbar);
                    }
-                   Lod.g("onpagestarted",url);
+                   Log.d("onpagestarted",url);
             }
             else
             {
