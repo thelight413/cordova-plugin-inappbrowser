@@ -93,6 +93,8 @@ public class InAppBrowser extends CordovaPlugin {
     private static final String DISMISSABLE_WITH_BACK_BUTTON = "dismissablewithbackbutton";
     private static final String homepage = "http://www.theyeshivaworld.com/";
     private InAppBrowserDialog dialog;
+    private RelativeLayout toolbar;
+    private LinearLayout main;
     private WebView inAppWebView;
     private EditText edittext;
     private CallbackContext callbackContext;
@@ -576,11 +578,11 @@ public class InAppBrowser extends CordovaPlugin {
                 dialog.setInAppBroswer(getInAppBrowser());
 
                 // Main container layout
-                LinearLayout main = new LinearLayout(cordova.getActivity());
+                main = new LinearLayout(cordova.getActivity());
                 main.setOrientation(LinearLayout.VERTICAL);
 
                 // Toolbar layout
-                RelativeLayout toolbar = new RelativeLayout(cordova.getActivity());
+                toolbar = new RelativeLayout(cordova.getActivity());
                 //Please, no more black!
                 toolbar.setBackgroundColor(android.graphics.Color.parseColor("#1A385D"));
                 toolbar.setLayoutParams(new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, this.dpToPixels(44)));
@@ -833,7 +835,7 @@ public class InAppBrowser extends CordovaPlugin {
             final PackageManager packageManager = cordova.getActivity().getApplicationContext().getPackageManager();
             final List<ResolveInfo> resolvedActivities = packageManager.queryIntentActivities(customSchemeIntent, 0);
              Log.d("here",url);
-             LinearLayout main = new LinearLayout(cordova.getActivity());
+             
 
             String newloc = "";
             if (url.startsWith("http:") || url.startsWith("https:") || url.startsWith("file:")) {
