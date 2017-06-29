@@ -915,13 +915,7 @@ public class InAppBrowser extends CordovaPlugin {
             String newloc = "";
             if (url.startsWith("http:") || url.startsWith("https:") || url.startsWith("file:")) {
                 newloc = url;
-                if(url.equals(homepage)){
-                      toolbar.setVisibility(View.GONE);
-                       String html = "$('.td-header-wrap.td-header-style-6').hide();";
-                       injectDeferredObject(html,null);
-                }else{
-                     toolbar.setVisibility(View.VISIBLE);
-                }
+                
                    Log.d("onpagestarted",url);
             }
             else
@@ -951,7 +945,13 @@ public class InAppBrowser extends CordovaPlugin {
 
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
-           
+           if(url.equals(homepage)){
+                      toolbar.setVisibility(View.GONE);
+                       String html = "$('.td-header-wrap.td-header-style-6').hide();";
+                       injectDeferredObject(html,null);
+                }else{
+                     toolbar.setVisibility(View.VISIBLE);
+                }
             // CB-10395 InAppBrowser's WebView not storing cookies reliable to local device storage
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
                 CookieManager.getInstance().flush();
