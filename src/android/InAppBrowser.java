@@ -833,6 +833,8 @@ public class InAppBrowser extends CordovaPlugin {
             final PackageManager packageManager = cordova.getActivity().getApplicationContext().getPackageManager();
             final List<ResolveInfo> resolvedActivities = packageManager.queryIntentActivities(customSchemeIntent, 0);
              Log.d("here",url);
+             LinearLayout main = new LinearLayout(cordova.getActivity());
+
             String newloc = "";
             if (url.startsWith("http:") || url.startsWith("https:") || url.startsWith("file:")) {
                 newloc = url;
