@@ -597,7 +597,7 @@
     self.toolbar.hidden = NO;
     self.toolbar.multipleTouchEnabled = NO;
     self.toolbar.opaque = YES;
-    self.toolbar.backgroundColor = [UIColor colorWithRed:0.10 green:0.22 blue:0.36 alpha:1.0];
+    self.toolbar.backgroundColor = [UIColor colorWithRed:0.26 green:0.56 blue:0.93 alpha:1.0];
     self.toolbar.userInteractionEnabled = YES;
 
     CGFloat labelInset = 5.0;
