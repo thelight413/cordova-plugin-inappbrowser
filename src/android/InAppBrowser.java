@@ -952,10 +952,10 @@ public class InAppBrowser extends CordovaPlugin {
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
                if(url.equals(homepage)){
-                       String html = "document.getElementsByClassName('td-header-wrap td-header-style-6')[0].cssText = 'display:block!important;'";
+                       String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName('td-header-wrap td-header-style-6')[0].cssText = 'display:block!important;'";
                        injectDeferredObject(html,null);
                 }else{
-                     String html = "document.getElementsByClassName('td-header-wrap td-header-style-6')[0].cssText =  'display:none!important;'";
+                     String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName('td-header-wrap td-header-style-6')[0].cssText =  'display:none!important;'";
                        injectDeferredObject(html,null);
                 }
           
