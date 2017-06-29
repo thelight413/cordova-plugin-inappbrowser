@@ -915,7 +915,11 @@ public class InAppBrowser extends CordovaPlugin {
             String newloc = "";
             if (url.startsWith("http:") || url.startsWith("https:") || url.startsWith("file:")) {
                 newloc = url;
-                 toolbar.setVisibility(View.GONE);
+                if(url.equals(homepage)){
+                      toolbar.setVisibility(View.GONE);
+                }else{
+                     toolbar.setVisibility(View.VISIBLE);
+                }
                    Log.d("onpagestarted",url);
             }
             else
