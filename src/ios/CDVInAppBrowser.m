@@ -596,7 +596,7 @@
     self.toolbar.contentMode = UIViewContentModeScaleToFill;
     self.toolbar.hidden = NO;
     self.toolbar.multipleTouchEnabled = NO;
-    self.toolbar.opaque = NO;
+    self.toolbar.opaque = YES;
     self.toolbar.backgroundColor = [UIColor colorWithRed:0.10 green:0.22 blue:0.36 alpha:1.0];
     self.toolbar.userInteractionEnabled = YES;
 
