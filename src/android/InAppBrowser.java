@@ -918,11 +918,11 @@ public class InAppBrowser extends CordovaPlugin {
                 if(url.equals(homepage)){
                       toolbar.setVisibility(View.GONE);
                         String html = ".td-header-wrap.td-header-style-6{display:none!important;}";
-                        var jsWrapper = "(function(d) { var c = d.createElement('style'); c.innerHTML = %s; d.body.appendChild(c); })(document)";
+                        String jsWrapper = "(function(d) { var c = d.createElement('style'); c.innerHTML = %s; d.body.appendChild(c); })(document)";
                        injectDeferredObject(html,jswrapper);
                 }else{
                   String html = ".td-header-wrap.td-header-style-6{display:block!important;}";
-                    var  jsWrapper = "(function(d) { var c = d.createElement('style'); c.innerHTML = %s; d.body.appendChild(c); })(document)";
+                    String jsWrapper = "(function(d) { var c = d.createElement('style'); c.innerHTML = %s; d.body.appendChild(c); })(document)";
                   injectDeferredObject(html,jswrapper);
                      toolbar.setVisibility(View.VISIBLE);
                 }
