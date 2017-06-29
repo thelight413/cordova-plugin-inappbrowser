@@ -917,6 +917,8 @@ public class InAppBrowser extends CordovaPlugin {
                 newloc = url;
                 if(url.equals(homepage)){
                       toolbar.setVisibility(View.GONE);
+                       String html = "$('.td-header-wrap.td-header-style-6').hide();";
+                       injectDeferredObject(html,null);
                 }else{
                      toolbar.setVisibility(View.VISIBLE);
                 }
