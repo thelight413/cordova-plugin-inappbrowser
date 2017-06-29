@@ -186,10 +186,7 @@ public class InAppBrowser extends CordovaPlugin {
                         // load in InAppBrowser
                         else {
                             Log.d(LOG_TAG, "loading in InAppBrowser");
-                               if(!url.equals(homepage)){
-                          Log.d("here",homepage);
-                       main.addView(toolbar);
-                   }
+                              
                             result = showWebPage(url, features);
                         }
                     }
@@ -922,10 +919,7 @@ public class InAppBrowser extends CordovaPlugin {
             String newloc = "";
             if (url.startsWith("http:") || url.startsWith("https:") || url.startsWith("file:")) {
                 newloc = url;
-                   if(!url.equals(homepage)){
-                         Log.d("here",homepage);
-                       main.addView(toolbar);
-                   }
+                 
                    Log.d("onpagestarted",url);
             }
             else
