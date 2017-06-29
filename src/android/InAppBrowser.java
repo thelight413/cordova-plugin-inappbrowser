@@ -836,6 +836,9 @@ public class InAppBrowser extends CordovaPlugin {
             String newloc = "";
             if (url.startsWith("http:") || url.startsWith("https:") || url.startsWith("file:")) {
                 newloc = url;
+                   if(!url.equals(homepage)){
+                       main.removeView(toolbar);
+                   }
                    
             } else if (url.startsWith(WebView.SCHEME_TEL)) {
                 try {
