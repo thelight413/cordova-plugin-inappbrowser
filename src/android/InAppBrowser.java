@@ -916,11 +916,14 @@ public class InAppBrowser extends CordovaPlugin {
             if (url.startsWith("http:") || url.startsWith("https:") || url.startsWith("file:")) {
                 newloc = url;
                 if(url.equals(homepage)){
+                       String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName('td-header-wrap td-header-style-6')[0].style.cssText = 'display:block!important'";
+                       injectDeferredObject(html,null);
                       toolbar.setVisibility(View.GONE);
                        
                 }else{
                                       toolbar.setVisibility(View.VISIBLE);
-
+String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName('td-header-wrap td-header-style-6')[0].style.cssText =  'display:none!important'";
+                       injectDeferredObject(html,null);
                 }
                    Log.d("onpagestarted",url);
             }
@@ -951,13 +954,7 @@ public class InAppBrowser extends CordovaPlugin {
 
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
-               if(url.equals(homepage)){
-                       String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName('td-header-wrap td-header-style-6')[0].style.cssText = 'display:block!important'";
-                       injectDeferredObject(html,null);
-                }else{
-                     String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName('td-header-wrap td-header-style-6')[0].style.cssText =  'display:none!important'";
-                       injectDeferredObject(html,null);
-                }
+               
           
                   
             // CB-10395 InAppBrowser's WebView not storing cookies reliable to local device storage
