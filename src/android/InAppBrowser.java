@@ -93,8 +93,8 @@ public class InAppBrowser extends CordovaPlugin {
     private static final String DISMISSABLE_WITH_BACK_BUTTON = "dismissablewithbackbutton";
     private static final String homepage = "http://www.theyeshivaworld.com/";
     private InAppBrowserDialog dialog;
-    private RelativeLayout toolbar;
-    private LinearLayout main;
+    public RelativeLayout toolbar;
+    public LinearLayout main;
     private WebView inAppWebView;
     private EditText edittext;
     private CallbackContext callbackContext;
