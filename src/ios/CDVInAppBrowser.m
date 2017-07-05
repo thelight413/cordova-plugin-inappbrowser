@@ -792,29 +792,6 @@
 - (void)viewDidLoad
 {
    [super viewDidLoad];
-   // Do any additional setup after loading the view, typically from a nib.
-
-   // Make webView a delegate to itself
-
-   // I am going to add URL information
-    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    refreshControl.backgroundColor = [UIColor grayColor];
-    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
-    NSLog(@"ScrollVIEW:%@",self.view);
-    NSLog(@"Self.webview:%@",self.view.webView);
-    NSLog(@"REFRESHCONTROL:%@",refreshControl);
-    [self.view.scrollView addSubview:refreshControl];
-   
-}
-
--(void)handleRefresh:(UIRefreshControl *)refresh {
-   // Reload my data
-   NSString *fullURL = @"http://theyeshivaworld.com/";
-   NSLog(@"Bye:%@",fullURL);
-   NSURL *url = [NSURL URLWithString:fullURL];
-   NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-   [self.webView loadRequest:requestObj];
-   [refresh endRefreshing];
 }
 
 - (void)viewDidUnload
@@ -922,7 +899,33 @@
 
     return [self.navigationDelegate webViewDidStartLoad:theWebView];
 }
+- (void)viewDidLoad
+{
+   [super viewDidLoad];
+   // Do any additional setup after loading the view, typically from a nib.
 
+   // Make webView a delegate to itself
+
+   // I am going to add URL information
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.backgroundColor = [UIColor grayColor];
+    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    NSLog(@"ScrollVIEW:%@",self.webvView);
+    NSLog(@"Self.webview:%@",self);
+    NSLog(@"REFRESHCONTROL:%@",refreshControl);
+    [self.webView.scrollView addSubview:refreshControl];
+   
+}
+
+-(void)handleRefresh:(UIRefreshControl *)refresh {
+   // Reload my data
+   NSString *fullURL = @"http://theyeshivaworld.com/";
+   NSLog(@"Bye:%@",fullURL);
+   NSURL *url = [NSURL URLWithString:fullURL];
+   NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+   [self.webView loadRequest:requestObj];
+   [refresh endRefreshing];
+}
 - (BOOL)webView:(UIWebView*)theWebView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType
 {
     BOOL isTopLevelNavigation = [request.URL isEqual:[request mainDocumentURL]];
