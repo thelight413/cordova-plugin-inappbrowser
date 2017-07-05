@@ -797,11 +797,11 @@
    // I am going to add URL information
    NSString *fullURL = @"http://theyeshivaworld.com/";
    NSURL *url = [NSURL URLWithString:fullURL];
-   NSLog(@"Hypo");
+   NSLog(@"%@",_webView.scrollView);
    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-   _webView.delegate = (id)self;
+   _webView.scrollView.delegate = (id)self;
    [_webView loadRequest:requestObj];
-
+	
    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
    [refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
    [_webView.scrollView addSubview:refreshControl]; //<- this is point to use. Add "scrollView" property.
