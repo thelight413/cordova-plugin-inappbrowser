@@ -935,11 +935,11 @@
     self.addressLabel.text = [self.currentURL absoluteString];
     self.backButton.enabled = theWebView.canGoBack;
     self.forwardButton.enabled = theWebView.canGoForward;
-    //if(!theWebView.canGoBack) {
-    	//self.toolbar.hidden = YES;
-    //}else{
-        //self.toolbar.hidden = NO;
-    //}
+    if(!theWebView.canGoBack) {
+    	self.toolbar.hidden = YES;
+    }else{
+        self.toolbar.hidden = NO;
+    }
     [self.spinner stopAnimating];
 
     // Work around a bug where the first time a PDF is opened, all UIWebViews
