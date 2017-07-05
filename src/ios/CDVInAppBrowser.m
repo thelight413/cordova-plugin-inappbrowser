@@ -801,7 +801,7 @@
     refreshControl.backgroundColor = [UIColor grayColor];
     [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     NSLog(@"ScrollVIEW:%@",self);
-    NSLog(@"Self.webview:%@",self);
+    NSLog(@"Self.webview:%@",self.inAppBrowserViewController);
     NSLog(@"REFRESHCONTROL:%@",refreshControl);
     [self.webView.scrollView addSubview:refreshControl];
    
