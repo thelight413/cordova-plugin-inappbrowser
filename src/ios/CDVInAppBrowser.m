@@ -585,7 +585,7 @@
     fixedSpaceButton.width = 20;
     float toolbarY = toolbarIsAtBottom ? self.view.bounds.size.height - TOOLBAR_HEIGHT : 0.0;
     CGRect toolbarFrame = CGRectMake(0.0, toolbarY, self.view.bounds.size.width, TOOLBAR_HEIGHT);
-
+    
     self.toolbar = [[UIToolbar alloc] initWithFrame:toolbarFrame];
     self.toolbar.alpha = 1.000;
     self.toolbar.autoresizesSubviews = YES;
@@ -645,6 +645,8 @@
     self.backButton.tintColor = [UIColor colorWithWhite:1.000 alpha:1.000];
     self.backButton.imageInsets = UIEdgeInsetsZero;
 	
+    UIImage *webimage = [[UIImage imageNamed:@"ywnicon.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.imageButton = [[UIBarButtonItem alloc] initWithImage:webimage style:UIBarButtonItemStylePlain target:self];
     [self.toolbar setItems:@[self.backButton,flexibleSpaceButton,self.forwardButton]];
 	
     self.view.backgroundColor = [UIColor colorWithRed:0.10 green:0.22 blue:0.36 alpha:1.0];
