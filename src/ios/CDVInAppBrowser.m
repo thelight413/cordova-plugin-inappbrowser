@@ -646,7 +646,7 @@
     self.backButton.imageInsets = UIEdgeInsetsZero;
 	
     UIImage *webimage = [[UIImage imageWithContentsOfFile:@"icon.png"]];
-    NSLog(@(webimage));
+    NSLog(@"%@",webimage);
     //self.imageButton = [[UIBarButtonItem alloc] initWithImage:webimage style:UIBarButtonItemStylePlain target:self];
     [self.toolbar setItems:@[self.backButton,flexibleSpaceButton,self.forwardButton]];
 	
