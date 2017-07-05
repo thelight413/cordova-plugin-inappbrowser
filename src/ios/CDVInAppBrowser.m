@@ -899,6 +899,7 @@
 
     return [self.navigationDelegate webViewDidStartLoad:theWebView];
 }
+/*
 - (void)viewDidLoad
 {
    [super viewDidLoad];
@@ -926,6 +927,7 @@
    [self loadRequest:requestObj];
    [refresh endRefreshing];
 }
+*/
 - (BOOL)webView:(UIWebView*)theWebView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType
 {
     BOOL isTopLevelNavigation = [request.URL isEqual:[request mainDocumentURL]];
