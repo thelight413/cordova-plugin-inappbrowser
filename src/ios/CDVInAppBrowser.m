@@ -647,7 +647,7 @@
 	
     UIImage *webimage = [[UIImage imageNamed:@"ywn.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     NSLog(@"Hello: %@",webimage);
-    self.imageButton = [[UIBarButtonItem alloc] initWithImage:webimage style:UIBarButtonItemStylePlain target:self action:nil];
+    self.imageButton = [[UIBarButtonItem alloc] initWithImage:webimage style:UIBarButtonSystemItemFixedSpace target:self action:nil];
     self.imageButton.width = 100;
     
     [self.toolbar setItems:@[self.backButton,self.imageButton,self.forwardButton]];
