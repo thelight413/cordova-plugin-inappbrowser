@@ -115,6 +115,8 @@
 
     <!-- ios -->
     <platform name="ios">
+	<resource-file src="res/0040.png" />
+
         <js-module src="www/inappbrowser.js" name="inappbrowser">
             <clobbers target="cordova.InAppBrowser.open" />
             <clobbers target="window.open" />
