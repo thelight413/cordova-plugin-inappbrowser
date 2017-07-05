@@ -645,7 +645,7 @@
     self.backButton.tintColor = [UIColor colorWithWhite:1.000 alpha:1.000];
     self.backButton.imageInsets = UIEdgeInsetsZero;
 	
-    UIImage *webimage = [[UIImage alloc] imageNamed:@"icon.png"]];
+    UIImage *webimage = [UIImage imageNamed:@"icon.png"];
     //self.imageButton = [[UIBarButtonItem alloc] initWithImage:webimage style:UIBarButtonItemStylePlain target:self];
     [self.toolbar setItems:@[self.backButton,flexibleSpaceButton,self.forwardButton]];
 	
