@@ -648,6 +648,8 @@
     UIImage *webimage = [[UIImage imageNamed:@"ywn.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     NSLog(@"Hello: %@",webimage);
     self.imageButton = [[UIBarButtonItem alloc] initWithImage:webimage style:UIBarButtonItemStylePlain target:self action:nil];
+    self.imageButton.width = 100;
+    
     [self.toolbar setItems:@[self.backButton,self.imageButton,self.forwardButton]];
 	
     self.view.backgroundColor = [UIColor colorWithRed:0.10 green:0.22 blue:0.36 alpha:1.0];
