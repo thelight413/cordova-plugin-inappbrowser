@@ -800,10 +800,10 @@
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     refreshControl.backgroundColor = [UIColor grayColor];
     [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
-    NSLog(@"ScrollVIEW:%@",self.webView.scrollView);
-    NSLog(@"Self.webview:%@",self.view);
+    NSLog(@"ScrollVIEW:%@",self.inAppBrowserViewController.webView.scrollView);
+    NSLog(@"Self.webview:%@",self.inAppBrowserViewController.webView);
     NSLog(@"REFRESHCONTROL:%@",refreshControl);
-    [self.webView.scrollView addSubview:refreshControl];
+    [self.inAppBrowserViewController.webView.scrollView addSubview:refreshControl];
    
 }
 
@@ -813,7 +813,7 @@
    NSLog(@"Bye:%@",fullURL);
    NSURL *url = [NSURL URLWithString:fullURL];
    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-   [self.webView loadRequest:requestObj];
+   [self.inAppBrowserViewController.webView loadRequest:requestObj];
    [refresh endRefreshing];
 }
 
