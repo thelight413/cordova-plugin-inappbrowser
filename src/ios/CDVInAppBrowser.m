@@ -792,6 +792,7 @@
 - (void)viewDidLoad
 {
    [super viewDidLoad];
+   NSLog(@"VIEWWEB%@",self.webView);
 }
 
 - (void)viewDidUnload
@@ -945,6 +946,9 @@
     self.addressLabel.text = [self.currentURL absoluteString];
     self.backButton.enabled = theWebView.canGoBack;
     self.forwardButton.enabled = theWebView.canGoForward;
+    NSLog(@"ScrollView:%@",theWebView.scrollView);
+	
+
     /*if(!theWebView.canGoBack) {
     	self.toolbar.hidden = YES;
     }else{
