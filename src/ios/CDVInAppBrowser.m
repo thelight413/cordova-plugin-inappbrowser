@@ -804,7 +804,7 @@
 
    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
    [refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
-   [_webView.view addSubview:refreshControl]; //<- this is point to use. Add "scrollView" property.
+   [_webView.scrollView addSubview:refreshControl]; //<- this is point to use. Add "scrollView" property.
    
 }
 
