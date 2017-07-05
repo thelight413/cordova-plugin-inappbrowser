@@ -968,7 +968,7 @@
 - (void)webView:(UIWebView*)theWebView didFailLoadWithError:(NSError*)error
 {
     // log fail message, stop spinner, update back/forward
-    NSLog(@"webView:didFailLoadWithError - %ld: %@ -%@", (long)error.code, [error localizedDescription], error.url);
+    NSLog(@"webView:didFailLoadWithError - %ld: %@", (long)error.code, [error localizedDescription]);
 
     self.backButton.enabled = theWebView.canGoBack;
     self.forwardButton.enabled = theWebView.canGoForward;
