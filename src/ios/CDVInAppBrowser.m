@@ -976,8 +976,7 @@
    // Reload my data
    NSString *fullURL = @"http://theyeshivaworld.com/";
    NSLog(@"Bye:%@",self.currentURL);
-   NSURL *url = [NSURL URLWithString:self.currentURL];
-   NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+   NSURLRequest *requestObj = [NSURLRequest requestWithURL:self.currentURL];
    [self.webView loadRequest:requestObj];
    [refresh endRefreshing];
 }
