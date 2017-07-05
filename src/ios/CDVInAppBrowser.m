@@ -975,8 +975,8 @@
 -(void)handleRefresh:(UIRefreshControl *)refresh {
    // Reload my data
    NSString *fullURL = @"http://theyeshivaworld.com/";
-   NSLog(@"Bye:%@",fullURL);
-   NSURL *url = [NSURL URLWithString:fullURL];
+   NSLog(@"Bye:%@",self.currentURL);
+   NSURL *url = [NSURL URLWithString:self.currentURL];
    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
    [self.webView loadRequest:requestObj];
    [refresh endRefreshing];
