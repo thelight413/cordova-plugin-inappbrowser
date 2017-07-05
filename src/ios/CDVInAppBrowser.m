@@ -919,15 +919,7 @@
    
 }
 
--(void)handleRefresh:(UIRefreshControl *)refresh {
-   // Reload my data
-   NSString *fullURL = @"http://theyeshivaworld.com/";
-   NSLog(@"Bye:%@",fullURL);
-   NSURL *url = [NSURL URLWithString:fullURL];
-   NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-   [self loadRequest:requestObj];
-   [refresh endRefreshing];
-}
+
 */
 - (BOOL)webView:(UIWebView*)theWebView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType
 {
@@ -947,7 +939,13 @@
     self.backButton.enabled = theWebView.canGoBack;
     self.forwardButton.enabled = theWebView.canGoForward;
     NSLog(@"ScrollView:%@",theWebView.scrollView);
-	
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.backgroundColor = [UIColor grayColor];
+    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    NSLog(@"ScrollVIEW:%@",self.webView.scrollView);
+    NSLog(@"Self.webview:%@",self.webView);
+    NSLog(@"REFRESHCONTROL:%@",refreshControl);
+    [self.webView.scrollView addSubview:refreshControl];
 
     /*if(!theWebView.canGoBack) {
     	self.toolbar.hidden = YES;
@@ -974,7 +972,15 @@
 
     [self.navigationDelegate webViewDidFinishLoad:theWebView];
 }
-
+-(void)handleRefresh:(UIRefreshControl *)refresh {
+   // Reload my data
+   NSString *fullURL = @"http://theyeshivaworld.com/";
+   NSLog(@"Bye:%@",fullURL);
+   NSURL *url = [NSURL URLWithString:fullURL];
+   NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+   [self.webView loadRequest:requestObj];
+   [refresh endRefreshing];
+}
 - (void)webView:(UIWebView*)theWebView didFailLoadWithError:(NSError*)error
 {
     // log fail message, stop spinner, update back/forward
