@@ -803,7 +803,7 @@
     NSLog(@"ScrollVIEW:%@",self);
     NSLog(@"Self.webview:%@",self);
     NSLog(@"REFRESHCONTROL:%@",refreshControl);
-    [self.scrollView addSubview:refreshControl];
+    [self.webView.scrollView addSubview:refreshControl];
    
 }
 
@@ -813,7 +813,7 @@
    NSLog(@"Bye:%@",fullURL);
    NSURL *url = [NSURL URLWithString:fullURL];
    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-   [self.inAppBrowserViewController.webView loadRequest:requestObj];
+   [self.webView loadRequest:requestObj];
    [refresh endRefreshing];
 }
 
