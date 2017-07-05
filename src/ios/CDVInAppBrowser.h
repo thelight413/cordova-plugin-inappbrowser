@@ -23,10 +23,8 @@
 
 #ifdef __CORDOVA_4_0_0
     #import <Cordova/CDVUIWebViewDelegate.h>
-    #import <Cordova/CDVUIScrollViewDelegate.h>
 #else
     #import <Cordova/CDVWebViewDelegate.h>
-    #import <Cordova/CDVScrollViewDelegate.h>
 #endif
 
 @class CDVInAppBrowserViewController;
