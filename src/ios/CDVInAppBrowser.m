@@ -648,14 +648,13 @@
     //UIImage *webimage = [[UIImage imageNamed:@"ywn.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //NSLog(@"Hello: %@",webimage);
    
-    UIImage *originalImage = [UIImage imageNamed:@"ywn.png"];
-        CGSize destinationSize = CGSizeMake(100, 25);
+    UIImage *originalImage = [[UIImage imageNamed:@"ywn.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        CGSize destinationSize = CGSizeMake(300, 25);
         UIGraphicsBeginImageContext(destinationSize);
         [originalImage drawInRect:CGRectMake(0,0,destinationSize.width,destinationSize.height)];
         UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
 	 self.imageButton = [[UIBarButtonItem alloc] initWithImage:newImage style:UIBarButtonSystemItemFixedSpace target:self action:nil];
-    self.imageButton.width = 100;
     [self.toolbar setItems:@[self.backButton,self.imageButton,self.forwardButton]];
 	
     self.view.backgroundColor = [UIColor colorWithRed:0.10 green:0.22 blue:0.36 alpha:1.0];
