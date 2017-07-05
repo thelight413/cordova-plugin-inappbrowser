@@ -795,7 +795,7 @@
    // Make webView a delegate to itself
 
    // I am going to add URL information
-   NSString *fullURL = @"http://theyeshivaworld.com/";
+   /*NSString *fullURL = @"http://theyeshivaworld.com/";
    NSURL *url = [NSURL URLWithString:fullURL];
    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
    _webView.delegate = (id)self;
@@ -804,8 +804,9 @@
    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
    [refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
    [_webView.scrollView addSubview:refreshControl]; //<- this is point to use. Add "scrollView" property.
+   */
 }
-
+/*
 -(void)handleRefresh:(UIRefreshControl *)refresh {
    // Reload my data
    NSString *fullURL = @"http://theyeshivaworld.com/";
@@ -813,7 +814,7 @@
    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
    [_webView loadRequest:requestObj];
    [refresh endRefreshing];
-}
+}*/
 
 - (void)viewDidUnload
 {
