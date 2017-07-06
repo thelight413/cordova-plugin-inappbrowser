@@ -578,7 +578,7 @@ public class InAppBrowser extends CordovaPlugin {
                 dialog.setInAppBroswer(getInAppBrowser());
 
                 // Main container layout
-                LinearLayout main = new LinearLayout(cordova.getActivity());
+                SwipeRefreshLayout main = new SwipeRefreshLayout(cordova.getActivity());   
                 main.setOrientation(LinearLayout.VERTICAL);
 
                 // Toolbar layout
@@ -755,6 +755,18 @@ public class InAppBrowser extends CordovaPlugin {
 
                 // Add our webview to our main view/layout
                 main.addView(inAppWebView);
+                main.setOnRefreshListener(
+                         new SwipeRefreshLayout.OnRefreshListener() {
+                             @Override
+                             public void onRefresh() {
+                                 Log.i(LOG_TAG, "onRefresh called from SwipeRefreshLayout");
+
+                                 // This method performs the actual data-refresh operation.
+                                 // The method calls setRefreshing(false) when it's finished.
+                                   navigate(inAppWebView.getUrl());
+                             }
+                         }
+                 );
 
                 WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
                 lp.copyFrom(dialog.getWindow().getAttributes());
