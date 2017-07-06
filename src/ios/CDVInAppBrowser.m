@@ -660,7 +660,7 @@
         UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
 	 self.imageButton = [[UIBarButtonItem alloc] initWithImage:newImage style:UIBarButtonSystemItemFixedSpace target:self action:nil];
-    	    self.imageButton.backgroundColor = [UIColor colorWithWhite:1.000 alpha:1.000];
+    	    self.imageButton.tintColor = [UIColor colorWithWhite:1.000 alpha:1.000];
 
 	[self.toolbar setItems:@[self.backButton,fixedSpaceButton,fixedSpaceButton,fixedSpaceButton,self.imageButton,fixedSpaceButton]];
 	
