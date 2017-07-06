@@ -950,14 +950,21 @@
     NSLog(@"Self.webview:%@",self.webView);
     NSLog(@"REFRESHCONTROL:%@",refreshControl);
     [self.webView.scrollView addSubview:refreshControl];
-    NSLog(@"TOOLBAR:%@",kInAppBrowserToolbarBarPositionTop);	
-    if(!theWebView.canGoBack) {
-    	self.toolbar.hidden = YES;
-	[self.inAppBrowserViewController showToolbar:!self.toolbar.hidden toolbarPosition:kInAppBrowserToolbarBarPositionTop]
+    NSLog(@"TOOLBAR:%@",kInAppBrowserToolbarBarPositionTop);
+    CGRect toolbarFrame = self.toolbar.frame;
+   
+    if(theWebView.canGoBack) {
+    	self.toolbar.hidden = NO;
+	     CGRect webViewBounds = self.view.bounds;
+	webViewBounds.size.height -= TOOLBAR_HEIGHT;
+            self.toolbar.frame = toolbarFrame;
+	     toolbarFrame.origin.y = 0;
+            webViewBounds.origin.y += toolbarFrame.size.height;
+            [self setWebViewFrame:webViewBounds];
 
     }else{
-        self.toolbar.hidden = NO;
-	[self.inAppBrowserViewController showToolbar:!self.toolbar.hidden toolbarPosition:kInAppBrowserToolbarBarPositionTop]
+        self.toolbar.hidden = YES;
+	[self setWebViewFrame:self.view.bounds];
     }
     [self.spinner stopAnimating];
 
