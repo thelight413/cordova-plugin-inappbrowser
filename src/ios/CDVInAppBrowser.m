@@ -902,7 +902,27 @@
     self.addressLabel.text = NSLocalizedString(@"Loading...", nil);
     self.backButton.enabled = theWebView.canGoBack;
     self.forwardButton.enabled = theWebView.canGoForward;
+ if(theWebView.canGoBack) {
+    	self.toolbar.hidden = NO;
+	     CGRect webViewBounds = self.view.bounds;
+	webViewBounds.size.height -= TOOLBAR_HEIGHT;
+            self.toolbar.frame = toolbarFrame;
+	     toolbarFrame.origin.y = 0;
+            webViewBounds.origin.y += toolbarFrame.size.height;
+	     NSString *html = @"console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName('td-header-wrap td-header-style-6')[0].style.cssText = 'display:none!important'";
+   	 [self.webView stringByEvaluatingJavaScriptFromString:@"(function(d){_cdvIframeBridge=d.getElementById('_cdvIframeBridge');if(!_cdvIframeBridge) {var e = _cdvIframeBridge = d.createElement('iframe');e.id='_cdvIframeBridge'; e.style.display='none';d.body.appendChild(e);}})(document)"];
+                   [self.webView stringByEvaluatingJavaScriptFromString:html];
 
+	    [self setWebViewFrame:webViewBounds];
+
+    }else{
+        self.toolbar.hidden = YES;
+	     NSString *html = @"console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName('td-header-wrap td-header-style-6')[0].style.cssText = 'display:block!important'";
+                 [self.webView stringByEvaluatingJavaScriptFromString:@"(function(d){_cdvIframeBridge=d.getElementById('_cdvIframeBridge');if(!_cdvIframeBridge) {var e = _cdvIframeBridge = d.createElement('iframe');e.id='_cdvIframeBridge'; e.style.display='none';d.body.appendChild(e);}})(document)"];
+        [self.webView stringByEvaluatingJavaScriptFromString:html];
+
+	[self setWebViewFrame:self.view.bounds];
+    }
     [self.spinner startAnimating];
 
     return [self.navigationDelegate webViewDidStartLoad:theWebView];
