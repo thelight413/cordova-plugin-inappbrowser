@@ -640,7 +640,7 @@
     self.forwardButton.imageInsets = UIEdgeInsetsZero;
 
     UIImage *backArrowImage = [[UIImage imageNamed:@"backbutton.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    CGSize destinationBackSize = CGSizeMake(40, 40);
+    CGSize destinationBackSize = CGSizeMake(20, 20);
     UIGraphicsBeginImageContext(destinationBackSize);
     [backArrowImage drawInRect:CGRectMake(0,0,destinationBackSize.width,destinationBackSize.height)];
     UIImage *newBackImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -654,7 +654,7 @@
     //NSLog(@"Hello: %@",webimage);
    
     UIImage *originalImage = [[UIImage imageNamed:@"ywn.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        CGSize destinationSize = CGSizeMake(125, 30);
+        CGSize destinationSize = CGSizeMake(140, 30);
         UIGraphicsBeginImageContext(destinationSize);
         [originalImage drawInRect:CGRectMake(0,0,destinationSize.width,destinationSize.height)];
         UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
