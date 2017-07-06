@@ -963,13 +963,17 @@
 	     toolbarFrame.origin.y = 0;
             webViewBounds.origin.y += toolbarFrame.size.height;
 	     NSString *html = @"console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName('td-header-wrap td-header-style-6')[0].style.cssText = 'display:none!important'";
-             [self injectDeferredObject:html withWrapper:nil];
-            [self setWebViewFrame:webViewBounds];
+   	 [self.webView stringByEvaluatingJavaScriptFromString:@"(function(d){_cdvIframeBridge=d.getElementById('_cdvIframeBridge');if(!_cdvIframeBridge) {var e = _cdvIframeBridge = d.createElement('iframe');e.id='_cdvIframeBridge'; e.style.display='none';d.body.appendChild(e);}})(document)"];
+                   [self.webView stringByEvaluatingJavaScriptFromString:html];
+
+	    [self setWebViewFrame:webViewBounds];
 
     }else{
         self.toolbar.hidden = YES;
 	     NSString *html = @"console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName('td-header-wrap td-header-style-6')[0].style.cssText = 'display:block!important'";
-              [self injectDeferredObject:html withWrapper:nil];
+                 [self.webView stringByEvaluatingJavaScriptFromString:@"(function(d){_cdvIframeBridge=d.getElementById('_cdvIframeBridge');if(!_cdvIframeBridge) {var e = _cdvIframeBridge = d.createElement('iframe');e.id='_cdvIframeBridge'; e.style.display='none';d.body.appendChild(e);}})(document)"];
+        [self.webView stringByEvaluatingJavaScriptFromString:html];
+
 	[self setWebViewFrame:self.view.bounds];
     }
     [self.spinner stopAnimating];
