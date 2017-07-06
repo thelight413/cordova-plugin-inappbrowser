@@ -902,6 +902,8 @@
     self.addressLabel.text = NSLocalizedString(@"Loading...", nil);
     self.backButton.enabled = theWebView.canGoBack;
     self.forwardButton.enabled = theWebView.canGoForward;
+	    CGRect toolbarFrame = self.toolbar.frame;
+
  if(theWebView.canGoBack) {
     	self.toolbar.hidden = NO;
 	     CGRect webViewBounds = self.view.bounds;
