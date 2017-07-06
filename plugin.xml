@@ -64,10 +64,10 @@
         <resource-file src="src/android/res/drawable-xhdpi/ic_action_previous_item_ywn.png" target="res/drawable-xhdpi/ic_action_previous_item_ywn.png" />
         <resource-file src="src/android/res/drawable-xxhdpi/ic_action_previous_item_ywn.png" target="res/drawable-xxhdpi/ic_action_previous_item_ywn.png" />
 
-	<resource-file src="src/android/res/drawable-hdpi/ywn_icon.png" target="res/drawable-hdpi/ywn_icon.png" />
-        <resource-file src="src/android/res/drawable-mdpi/ywn_icon.png" target="res/drawable-mdpi/ywn_icon.png" />
-        <resource-file src="src/android/res/drawable-xhdpi/ywn_icon.png" target="res/drawable-xhdpi/ywn_icon.png" />
-        <resource-file src="src/android/res/drawable-xxhdpi/ywn_icon.png" target="res/drawable-xxhdpi/ywn_icon.png" />
+	<resource-file src="src/android/res/drawable-hdpi/ywn.png" target="res/drawable-hdpi/ywn.png" />
+        <resource-file src="src/android/res/drawable-mdpi/ywn.png" target="res/drawable-mdpi/ywn.png" />
+        <resource-file src="src/android/res/drawable-xhdpi/ywn.png" target="res/drawable-xhdpi/ywn.png" />
+        <resource-file src="src/android/res/drawable-xxhdpi/ywn.png" target="res/drawable-xxhdpi/ywn.png" />
 	    
         <resource-file src="src/android/res/drawable-hdpi/ic_action_remove.png" target="res/drawable-hdpi/ic_action_remove.png" />
         <resource-file src="src/android/res/drawable-mdpi/ic_action_remove.png" target="res/drawable-mdpi/ic_action_remove.png" />
