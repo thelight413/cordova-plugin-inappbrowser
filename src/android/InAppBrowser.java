@@ -622,7 +622,7 @@ public class InAppBrowser extends CordovaPlugin {
                 });
 
                 // Forward button
-                ImageButton forward = new ImageButton(cordova.getActivity());
+                /*ImageButton forward = new ImageButton(cordova.getActivity());
                 RelativeLayout.LayoutParams forwardLayoutParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
                 forwardLayoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
                 forward.setLayoutParams(forwardLayoutParams);
@@ -634,7 +634,7 @@ public class InAppBrowser extends CordovaPlugin {
                 forward.setImageDrawable(null);
                 forward.setScaleType(ImageView.ScaleType.FIT_CENTER);
                 forward.setPadding(0, this.dpToPixels(10), 0, this.dpToPixels(10));
-                forward.getAdjustViewBounds();
+                forward.getAdjustViewBounds();*/
 
                
                    ImageButton icon_button = new ImageButton(cordova.getActivity());
@@ -649,7 +649,7 @@ public class InAppBrowser extends CordovaPlugin {
                 icon_button.setBackground(null);
                 icon_button.setImageDrawable(iconIcon);
                 icon_button.setScaleType(ImageView.ScaleType.FIT_XY);
-                                   icon_button.setPadding(0, this.dpToPixels(10), 0, this.dpToPixels(10));
+                                   icon_button.setPadding(this.dpToPixels(10), this.dpToPixels(10), this.dpToPixels(10), this.dpToPixels(10));
 
                 icon_button.getAdjustViewBounds();
 
