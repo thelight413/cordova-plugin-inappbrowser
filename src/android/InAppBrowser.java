@@ -761,7 +761,7 @@ public class InAppBrowser extends CordovaPlugin {
                              @Override
                              public void onRefresh() {
                                  Log.i(LOG_TAG, "onRefresh called from SwipeRefreshLayout");
-
+                                  Log.d("HELLOTHERE",inAppWebView.getUrl());
                                  // This method performs the actual data-refresh operation.
                                  // The method calls setRefreshing(false) when it's finished.
                                    navigate(inAppWebView.getUrl());
