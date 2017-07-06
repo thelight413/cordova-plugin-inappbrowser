@@ -953,11 +953,11 @@
     NSLog(@"TOOLBAR:%@",kInAppBrowserToolbarBarPositionTop);	
     if(!theWebView.canGoBack) {
     	self.toolbar.hidden = YES;
-	[self showToolbar:false toolbarPosition:kInAppBrowserToolbarBarPositionTop]
+	//[self showToolbar:false toolbarPosition:kInAppBrowserToolbarBarPositionTop]
 
     }else{
         self.toolbar.hidden = NO;
-	[self showToolbar:true toolbarPosition:kInAppBrowserToolbarBarPositionTop]
+	//[self showToolbar:true toolbarPosition:kInAppBrowserToolbarBarPositionTop]
     }
     [self.spinner stopAnimating];
 
