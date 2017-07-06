@@ -82,7 +82,7 @@
         <source-file src="src/amazon/InAppBrowser.java" target-dir="src/org/apache/cordova/inappbrowser" />
         <source-file src="src/android/InAppBrowserDialog.java" target-dir="src/org/apache/cordova/inappbrowser" />
         <source-file src="src/amazon/InAppChromeClient.java" target-dir="src/org/apache/cordova/inappbrowser" />
-
+	<plugin name="cordova-plugin-android-support-v4"/>
         <!--  drawable src/android/resources -->
         <resource-file src="src/android/res/drawable-hdpi/ic_action_next_item_ywn.png" target="res/drawable-hdpi/ic_action_next_item_ywn.png" />
         <resource-file src="src/android/res/drawable-mdpi/ic_action_next_item_ywn.png" target="res/drawable-mdpi/ic_action_next_item_ywn.png" />
