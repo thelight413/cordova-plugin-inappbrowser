@@ -52,6 +52,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.support.v4.widget.SwipeRefreshLayout;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.Config;
