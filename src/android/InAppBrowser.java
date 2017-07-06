@@ -580,7 +580,7 @@ public class InAppBrowser extends CordovaPlugin {
 
                 // Main container layout
                 SwipeRefreshLayout main = new SwipeRefreshLayout(cordova.getActivity());   
-                main.setOrientation(LinearLayout.VERTICAL);
+                //main.setOrientation(LinearLayout.VERTICAL);
 
                 // Toolbar layout
                 RelativeLayout toolbar = new RelativeLayout(cordova.getActivity());
