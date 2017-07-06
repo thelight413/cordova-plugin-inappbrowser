@@ -657,7 +657,7 @@
 	 self.imageButton = [[UIBarButtonItem alloc] initWithImage:newImage style:UIBarButtonSystemItemFixedSpace target:self action:nil];
     [self.toolbar setItems:@[self.backButton,fixedSpaceButton,fixedSpaceButton,fixedSpaceButton,self.imageButton,fixedSpaceButton]];
 	
-    self.view.backgroundColor = [UIColor colorWithRed:0.10 green:0.22 blue:0.36 alpha:1.0];
+    //self.view.backgroundColor = [UIColor colorWithRed:0.10 green:0.22 blue:0.36 alpha:1.0];
     [self.view addSubview:self.toolbar];
     [self.view addSubview:self.addressLabel];
     [self.view addSubview:self.spinner];
@@ -953,11 +953,11 @@
     NSLog(@"TOOLBAR:%@",kInAppBrowserToolbarBarPositionTop);	
     if(!theWebView.canGoBack) {
     	self.toolbar.hidden = YES;
-	//[self showToolbar:false toolbarPosition:kInAppBrowserToolbarBarPositionTop]
+	[self showToolbar:!self.toolbar.hidden toolbarPosition:kInAppBrowserToolbarBarPositionTop]
 
     }else{
         self.toolbar.hidden = NO;
-	//[self showToolbar:true toolbarPosition:kInAppBrowserToolbarBarPositionTop]
+	[self showToolbar:!self.toolbar.hidden toolbarPosition:kInAppBrowserToolbarBarPositionTop]
     }
     [self.spinner stopAnimating];
 
