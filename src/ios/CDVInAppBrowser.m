@@ -654,13 +654,13 @@
     //NSLog(@"Hello: %@",webimage);
    
     UIImage *originalImage = [[UIImage imageNamed:@"ywn.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        CGSize destinationSize = CGSizeMake(140, 30);
+        CGSize destinationSize = CGSizeMake(150, 30);
         UIGraphicsBeginImageContext(destinationSize);
         [originalImage drawInRect:CGRectMake(0,0,destinationSize.width,destinationSize.height)];
         UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
 	 self.imageButton = [[UIBarButtonItem alloc] initWithImage:newImage style:UIBarButtonSystemItemFixedSpace target:self action:nil];
-    	    self.imageButton.tintColor = [UIColor colorWithWhite:1.000 alpha:1.000];
+    	    self.imageButton.backgroundColor = [UIColor colorWithWhite:1.000 alpha:1.000];
 
 	[self.toolbar setItems:@[self.backButton,fixedSpaceButton,fixedSpaceButton,fixedSpaceButton,self.imageButton,fixedSpaceButton]];
 	
