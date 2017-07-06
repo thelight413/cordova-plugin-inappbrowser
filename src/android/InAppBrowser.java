@@ -92,7 +92,7 @@ public class InAppBrowser extends CordovaPlugin {
     private static final String HARDWARE_BACK_BUTTON = "hardwareback";
     private static final String MEDIA_PLAYBACK_REQUIRES_USER_ACTION = "mediaPlaybackRequiresUserAction";
     private static final String DISMISSABLE_WITH_BACK_BUTTON = "dismissablewithbackbutton";
-    private static final String homepage = "http://www.theyeshivaworld.com/";
+    private static final String homepage = "https://www.theyeshivaworld.com/";
     private InAppBrowserDialog dialog;
  
     private WebView inAppWebView;
