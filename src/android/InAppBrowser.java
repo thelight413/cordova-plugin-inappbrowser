@@ -622,7 +622,7 @@ public class InAppBrowser extends CordovaPlugin {
                 });
 
                 // Forward button
-                ImageButton forward = new ImageButton(cordova.getActivity());
+                /*ImageButton forward = new ImageButton(cordova.getActivity());
                 RelativeLayout.LayoutParams forwardLayoutParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
                 forwardLayoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
                 forward.setLayoutParams(forwardLayoutParams);
@@ -640,7 +640,22 @@ public class InAppBrowser extends CordovaPlugin {
                     public void onClick(View v) {
                         goForward();
                     }
-                });
+                });*/
+                   ImageButton icon_button = new ImageButton(cordova.getActivity());
+                RelativeLayout.LayoutParams iconLayoutParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
+                iconLayoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+                icon_button.setLayoutParams(iconLayoutParams);
+                icon_button.setContentDescription("Icon Button");
+                icon_button.setId(Integer.valueOf(3));
+                int ywnResId = activityRes.getIdentifier("ywn_icon", "drawable", cordova.getActivity().getPackageName());
+                Drawable iconIcon = activityRes.getDrawable(iconResId);
+                icon_button.setBackground(null);
+                icon_button.setImageDrawable(fwdIcon);
+                icon_button.setScaleType(ImageView.ScaleType.FIT_CENTER);
+                icon_button.setPadding(0, this.dpToPixels(10), 0, this.dpToPixels(10));
+                icon_button.getAdjustViewBounds();
+
+              
 
                 // Edit Text Box
                 edittext = new EditText(cordova.getActivity());
@@ -740,7 +755,7 @@ public class InAppBrowser extends CordovaPlugin {
 
                 // Add the back and forward buttons to our action button container layout
                 actionButtonContainer.addView(back);
-                actionButtonContainer.addView(forward);
+                //actionButtonContainer.addView(forward);
 
                 // Add the views to our toolbar
                 toolbar.addView(actionButtonContainer);
