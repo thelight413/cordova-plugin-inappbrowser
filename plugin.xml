@@ -116,6 +116,7 @@
     <!-- ios -->
     <platform name="ios">
 	<resource-file src="src/ios/res/ywn.png" />
+	<resource-file src="src/ios/res/backbutton.png" />
 
         <js-module src="www/inappbrowser.js" name="inappbrowser">
             <clobbers target="cordova.InAppBrowser.open" />
