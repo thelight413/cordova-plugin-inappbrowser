@@ -755,7 +755,7 @@ public class InAppBrowser extends CordovaPlugin {
 
                 // Add the back and forward buttons to our action button container layout
                 actionButtonContainer.addView(back);
-                actionButtonContainer.addView(iconButton);
+                actionButtonContainer.addView(icon_button);
 
                 // Add the views to our toolbar
                 toolbar.addView(actionButtonContainer);
