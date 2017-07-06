@@ -649,7 +649,7 @@
     //NSLog(@"Hello: %@",webimage);
    
     UIImage *originalImage = [[UIImage imageNamed:@"ywn.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        CGSize destinationSize = CGSizeMake(150, 50);
+        CGSize destinationSize = CGSizeMake(150, 40);
         UIGraphicsBeginImageContext(destinationSize);
         [originalImage drawInRect:CGRectMake(0,0,destinationSize.width,destinationSize.height)];
         UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
