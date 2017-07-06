@@ -643,7 +643,7 @@ public class InAppBrowser extends CordovaPlugin {
                 });*/
                    ImageButton icon_button = new ImageButton(cordova.getActivity());
                 RelativeLayout.LayoutParams iconLayoutParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
-                iconLayoutParams.addRule(RelativeLayout.RIGHT_OF,2);
+                iconLayoutParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
                 icon_button.setLayoutParams(iconLayoutParams);
                 icon_button.setContentDescription("Icon Button");
                 icon_button.setId(Integer.valueOf(3));
