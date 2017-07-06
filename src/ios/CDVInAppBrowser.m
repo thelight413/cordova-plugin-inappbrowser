@@ -1113,6 +1113,14 @@
     bgToolbar.barStyle = UIBarStyleDefault;
     [bgToolbar setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
     [self.view addSubview:bgToolbar];
+	if(!self.webView.canGoBack) {
+    	self.bgToolbar.hidden = YES;
+	//[self showToolbar:false toolbarPosition:kInAppBrowserToolbarBarPositionTop]
+
+    }else{
+        self.bgToolbar.hidden = NO;
+	//[self showToolbar:true toolbarPosition:kInAppBrowserToolbarBarPositionTop]
+    }
 
     [super viewDidLoad];
 }
