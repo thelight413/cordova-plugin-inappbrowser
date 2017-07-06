@@ -601,7 +601,7 @@ public class InAppBrowser extends CordovaPlugin {
                 // Back button
                 ImageButton back = new ImageButton(cordova.getActivity());
                 RelativeLayout.LayoutParams backLayoutParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
-                backLayoutParams.addRule(RelativeLayout.CENTER_IN_PARENT);
+                backLayoutParams.addRule(RelativeLayout.ALIGN_RIGHT);
                 back.setLayoutParams(backLayoutParams);
                 back.setContentDescription("Back Button");
                 back.setId(Integer.valueOf(2));
@@ -643,7 +643,7 @@ public class InAppBrowser extends CordovaPlugin {
                 });*/
                    ImageButton icon_button = new ImageButton(cordova.getActivity());
                 RelativeLayout.LayoutParams iconLayoutParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
-                iconLayoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+                iconLayoutParams.addRule(RelativeLayout.CENTER_IN_PARENT);
                 icon_button.setLayoutParams(iconLayoutParams);
                 icon_button.setContentDescription("Icon Button");
                 icon_button.setId(Integer.valueOf(3));
