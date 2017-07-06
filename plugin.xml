@@ -41,9 +41,9 @@
         </js-module>
         <config-file target="res/xml/config.xml" parent="/*">
 		<plugin spec="https://github.com/MobileChromeApps/cordova-plugin-android-support-v4.git"/>
-            <feature name="InAppBrowser">
+            <!--<feature name="InAppBrowser">
                 <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser"/>
-            </feature>
+            </feature>-->
 	    	
 
         </config-file>
