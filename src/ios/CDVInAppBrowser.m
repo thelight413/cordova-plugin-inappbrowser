@@ -641,7 +641,7 @@
 
     UIImage *backArrowImage = [[UIImage imageNamed:@"backbutton.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     CGSize destinationBackSize = CGSizeMake(40, 40);
-    UIGraphicsBeginImageContext(destinationSize);
+    UIGraphicsBeginImageContext(destinationBackSize);
     [backArrowImage drawInRect:CGRectMake(0,0,destinationBackSize.width,destinationBackSize.height)];
     UIImage *newBackImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
