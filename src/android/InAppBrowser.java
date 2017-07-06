@@ -579,8 +579,8 @@ public class InAppBrowser extends CordovaPlugin {
                 dialog.setInAppBroswer(getInAppBrowser());
 
                 // Main container layout
-                SwipeRefreshLayout main = new SwipeRefreshLayout(cordova.getActivity());   
-                //main.setOrientation(LinearLayout.VERTICAL);
+                LinearLayout main = new LinearLayout(cordova.getActivity());   
+                main.setOrientation(LinearLayout.VERTICAL);
 
                 // Toolbar layout
                 RelativeLayout toolbar = new RelativeLayout(cordova.getActivity());
@@ -755,8 +755,8 @@ public class InAppBrowser extends CordovaPlugin {
                 }
 
                 // Add our webview to our main view/layout
-                main.addView(inAppWebView);
-                main.setOnRefreshListener(
+                SwipeRefreshLayout refreshLayout = new SwipeRefreshLayout(cordova.getActivity());
+                    refreshLayout.setOnRefreshListener(
                          new SwipeRefreshLayout.OnRefreshListener() {
                              @Override
                              public void onRefresh() {
@@ -769,6 +769,10 @@ public class InAppBrowser extends CordovaPlugin {
                          }
                  );
 
+                   refreshLayout.addView(inAppWebView);
+                                   main.addView(refreshLayout);
+
+               
                 WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
                 lp.copyFrom(dialog.getWindow().getAttributes());
                 lp.width = WindowManager.LayoutParams.MATCH_PARENT;
