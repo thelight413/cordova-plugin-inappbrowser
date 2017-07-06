@@ -765,7 +765,7 @@ public class InAppBrowser extends CordovaPlugin {
                                  // This method performs the actual data-refresh operation.
                                  // The method calls setRefreshing(false) when it's finished.
                                    navigate(inAppWebView.getUrl());
-                                    setRefreshing(false);
+                                    refreshLayout.setRefreshing(false);
                              }
                          }
                  );
