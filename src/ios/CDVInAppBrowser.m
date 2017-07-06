@@ -639,7 +639,7 @@
 
     self.forwardButton.imageInsets = UIEdgeInsetsZero;
 
-    UIImage *backArrowImage = [[UIImage imageNamed:@"backbutton.png" imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]// create arrow from Unicode char
+    UIImage *backArrowImage = [[UIImage imageNamed:@"backbutton.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     CGSize destinationBackSize = CGSizeMake(40, 40);
     UIGraphicsBeginImageContext(destinationSize);
     [backArrowImage drawInRect:CGRectMake(0,0,destinationBackSize.width,destinationBackSize.height)];
