@@ -639,8 +639,13 @@
 
     self.forwardButton.imageInsets = UIEdgeInsetsZero;
 
-    NSString* backArrowString = NSLocalizedString(@"◄", nil); // create arrow from Unicode char
-    self.backButton = [[UIBarButtonItem alloc] initWithTitle:backArrowString style:UIBarButtonItemStylePlain target:self action:@selector(goBack:)];
+    UIImage *backArrowImage = [[UIImage imageNamed:@"backbutton.png" imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]'// create arrow from Unicode char
+    CGSize destinationSize = CGSizeMake(40, 40);
+    UIGraphicsBeginImageContext(destinationSize);
+    [originalImage drawInRect:CGRectMake(0,0,destinationSize.width,destinationSize.height)];
+    UIImage *newBackImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.backButton = [[UIBarButtonItem alloc] initWithImage:newBackImage style:UIBarButtonItemStylePlain target:self action:@selector(goBack:)];
     self.backButton.enabled = YES;
     self.backButton.tintColor = [UIColor colorWithWhite:1.000 alpha:1.000];
     self.backButton.imageInsets = UIEdgeInsetsZero;
@@ -649,7 +654,7 @@
     //NSLog(@"Hello: %@",webimage);
    
     UIImage *originalImage = [[UIImage imageNamed:@"ywn.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        CGSize destinationSize = CGSizeMake(150, 40);
+        CGSize destinationSize = CGSizeMake(125, 30);
         UIGraphicsBeginImageContext(destinationSize);
         [originalImage drawInRect:CGRectMake(0,0,destinationSize.width,destinationSize.height)];
         UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
