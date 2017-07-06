@@ -951,12 +951,12 @@
     NSLog(@"Self.webview:%@",self.webView);
     NSLog(@"REFRESHCONTROL:%@",refreshControl);
     [self.webView.scrollView addSubview:refreshControl];
-
-    /*if(!theWebView.canGoBack) {
+    NSLog(@"TOOLBAR:%@",self.toolbar);	
+    if(!theWebView.canGoBack) {
     	self.toolbar.hidden = YES;
     }else{
         self.toolbar.hidden = NO;
-    }*/
+    }
     [self.spinner stopAnimating];
 
     // Work around a bug where the first time a PDF is opened, all UIWebViews
