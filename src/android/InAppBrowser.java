@@ -622,31 +622,28 @@ public class InAppBrowser extends CordovaPlugin {
                 });
 
                 // Forward button
-                /*ImageButton forward = new ImageButton(cordova.getActivity());
+                ImageButton forward = new ImageButton(cordova.getActivity());
                 RelativeLayout.LayoutParams forwardLayoutParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
                 forwardLayoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
                 forward.setLayoutParams(forwardLayoutParams);
                 forward.setContentDescription("Forward Button");
                 forward.setId(Integer.valueOf(3));
-                int fwdResId = activityRes.getIdentifier("ic_action_previous_item_ywn", "drawable", cordova.getActivity().getPackageName());
-                Drawable fwdIcon = activityRes.getDrawable(fwdResId);
+                //int fwdResId = activityRes.getIdentifier("ic_action_previous_item_ywn", "drawable", cordova.getActivity().getPackageName());
+                //Drawable fwdIcon = activityRes.getDrawable(fwdResId);
                 forward.setBackground(null);
-                forward.setImageDrawable(fwdIcon);
+                forward.setImageDrawable(null);
                 forward.setScaleType(ImageView.ScaleType.FIT_CENTER);
                 forward.setPadding(0, this.dpToPixels(10), 0, this.dpToPixels(10));
                 forward.getAdjustViewBounds();
 
-                forward.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View v) {
-                        goForward();
-                    }
-                });*/
+               
                    ImageButton icon_button = new ImageButton(cordova.getActivity());
                 RelativeLayout.LayoutParams iconLayoutParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
                 iconLayoutParams.addRule(RelativeLayout.RIGHT_OF,2);
+                iconLayoutParams.addRule(RelativeLayout.LEFT_OF,3);
                 icon_button.setLayoutParams(iconLayoutParams);
                 icon_button.setContentDescription("Icon Button");
-                icon_button.setId(Integer.valueOf(3));
+                icon_button.setId(Integer.valueOf(4));
                 int iconResId = activityRes.getIdentifier("ywn", "drawable", cordova.getActivity().getPackageName());
                 Drawable iconIcon = activityRes.getDrawable(iconResId);
                 icon_button.setBackground(null);
@@ -664,7 +661,7 @@ public class InAppBrowser extends CordovaPlugin {
                 textLayoutParams.addRule(RelativeLayout.RIGHT_OF, 1);
                 textLayoutParams.addRule(RelativeLayout.LEFT_OF, 5);
                 edittext.setLayoutParams(textLayoutParams);
-                edittext.setId(Integer.valueOf(4));
+                edittext.setId(Integer.valueOf(6));
                 edittext.setSingleLine(true);
                 edittext.setText(url);
                 edittext.setInputType(InputType.TYPE_TEXT_VARIATION_URI);
@@ -757,7 +754,7 @@ public class InAppBrowser extends CordovaPlugin {
                 // Add the back and forward buttons to our action button container layout
                 actionButtonContainer.addView(back);
                 actionButtonContainer.addView(icon_button);
-
+                actionButtonContainer.addView(forward);
                 // Add the views to our toolbar
                 toolbar.addView(actionButtonContainer);
                 //toolbar.addView(edittext);
