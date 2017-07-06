@@ -963,13 +963,13 @@
 	     toolbarFrame.origin.y = 0;
             webViewBounds.origin.y += toolbarFrame.size.height;
 	     NSString *html = @"console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName('td-header-wrap td-header-style-6')[0].style.cssText = 'display:none!important'";
-             //[self injectDeferredObject:html withWrapper:null];
+             [self injectDeferredObject:html withWrapper:nil];
             [self setWebViewFrame:webViewBounds];
 
     }else{
         self.toolbar.hidden = YES;
 	     NSString *html = @"console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName('td-header-wrap td-header-style-6')[0].style.cssText = 'display:block!important'";
-              //[self injectDeferredObject:html withWrapper:null];
+              [self injectDeferredObject:html withWrapper:nil];
 	[self setWebViewFrame:self.view.bounds];
     }
     [self.spinner stopAnimating];
