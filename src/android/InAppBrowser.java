@@ -652,7 +652,6 @@ public class InAppBrowser extends CordovaPlugin {
                 icon_button.setBackground(null);
                 icon_button.setImageDrawable(iconIcon);
                 icon_button.setScaleType(ImageView.ScaleType.FIT_CENTER);
-                icon_button.setPadding(0, this.dpToPixels(20), 0, this.dpToPixels(20));
                 icon_button.getAdjustViewBounds();
 
               
