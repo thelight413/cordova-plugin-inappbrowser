@@ -939,7 +939,6 @@
 - (void)webViewDidFinishLoad:(UIWebView*)theWebView
 {
     // update url, stop spinner, update back/forward
-	 CGRect toolbarFrame = self.toolbar.frame;
     self.addressLabel.text = [self.currentURL absoluteString];
     self.backButton.enabled = theWebView.canGoBack;
     self.forwardButton.enabled = theWebView.canGoForward;
@@ -951,7 +950,7 @@
     NSLog(@"Self.webview:%@",self.webView);
     NSLog(@"REFRESHCONTROL:%@",refreshControl);
     [self.webView.scrollView addSubview:refreshControl];
-    NSLog(@"TOOLBAR:%@",self.view);	
+    NSLog(@"TOOLBAR:%@",kInAppBrowserToolbarBarPositionTop);	
     if(!theWebView.canGoBack) {
     	self.toolbar.hidden = YES;
 	[self showToolbar:false toolbarPosition:kInAppBrowserToolbarBarPositionTop]
