@@ -755,7 +755,7 @@ public class InAppBrowser extends CordovaPlugin {
                 }
 
                 // Add our webview to our main view/layout
-                SwipeRefreshLayout refreshLayout = new SwipeRefreshLayout(cordova.getActivity());
+                final SwipeRefreshLayout refreshLayout = new SwipeRefreshLayout(cordova.getActivity());
                     refreshLayout.setOnRefreshListener(
                          new SwipeRefreshLayout.OnRefreshListener() {
                              @Override
@@ -765,7 +765,7 @@ public class InAppBrowser extends CordovaPlugin {
                                  // This method performs the actual data-refresh operation.
                                  // The method calls setRefreshing(false) when it's finished.
                                    navigate(inAppWebView.getUrl());
-                                    this.setRefreshing(false);
+                                    refreshLayout.setRefreshing(false);
                              }
                          }
                  );
