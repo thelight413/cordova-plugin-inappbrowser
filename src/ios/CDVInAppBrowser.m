@@ -1112,15 +1112,16 @@
     UIToolbar* bgToolbar = [[UIToolbar alloc] initWithFrame:statusBarFrame];
     bgToolbar.barStyle = UIBarStyleDefault;
     [bgToolbar setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
-    [self.view addSubview:bgToolbar];
 	if(!self.webView.canGoBack) {
-    	self.bgToolbar.hidden = YES;
+    	bgToolbar.hidden = YES;
 	//[self showToolbar:false toolbarPosition:kInAppBrowserToolbarBarPositionTop]
 
     }else{
-        self.bgToolbar.hidden = NO;
+        bgToolbar.hidden = NO;
 	//[self showToolbar:true toolbarPosition:kInAppBrowserToolbarBarPositionTop]
     }
+    [self.view addSubview:bgToolbar];
+	
 
     [super viewDidLoad];
 }
