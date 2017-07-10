@@ -17,7 +17,7 @@
        under the License.
 */
 package org.apache.cordova.inappbrowser;
-
+import org.apache.cordova.inappbrowser.R;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
