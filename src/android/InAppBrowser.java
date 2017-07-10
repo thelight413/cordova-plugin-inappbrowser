@@ -947,13 +947,13 @@ if (getShowLocationBar()) {
             if (url.startsWith("http:") || url.startsWith("https:") || url.startsWith("file:")) {
                 newloc = url;
                 if(url.equals(homepage)||url.equals(homepage+"#")){
-                       String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName(td-header-menu-wrap-full')[0].style.cssText='visibility:visible';document.getElementsByClassName('td-header-menu-wrap-full')[0].style.cssText = 'display:block!important';";
+                       String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName(td-header-menu-wrap-full')[0].style.cssText='visibility:visible';document.getElementsByClassName('td-header-menu-wrap-full')[0].style.cssText = 'display:block!important'";
                        injectDeferredObject(html,null);
                       toolbar.setVisibility(View.GONE);
                        
                 }else{
                                       toolbar.setVisibility(View.VISIBLE);
-String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName(td-header-menu-wrap-full')[0].style.cssText='visibility:hidden';document.getElementsByClassName('td-header-menu-wrap-full')[0].style.cssText =  'display:none!important';";
+String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName(td-header-menu-wrap-full')[0].style.cssText='visibility:hidden';document.getElementsByClassName('td-header-menu-wrap-full')[0].style.cssText =  'display:none!important'";
                        injectDeferredObject(html,null);
                 }
                    Log.d("onpagestarted",url);
@@ -988,12 +988,12 @@ String html = "console.log(document.getElementsByClassName('td-header-wrap td-he
             Log.d("URLisdone",url);
             Log.d("NEWURL",homepage+"#");
                if(url.equals(homepage)||url.equals(homepage+"#")){
-                       String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName(td-header-menu-wrap-full')[0].style.cssText = 'display:block!important';document.getElementsByClassName(td-header-menu-wrap-full')[0].style.cssText='visibility:visible';";
+                       String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName(td-header-menu-wrap-full')[0].style.cssText = 'display:block!important';document.getElementsByClassName(td-header-menu-wrap-full')[0].style.cssText='visibility:visible'";
                        injectDeferredObject(html,null);
                       
                        
                 }else{
-String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName('td-header-menu-wrap-full')[0].style.cssText =  'display:none!important';document.getElementsByClassName(td-header-menu-wrap-full')[0].style.cssText='visibility:hidden';";
+String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName('td-header-menu-wrap-full')[0].style.cssText =  'display:none!important';document.getElementsByClassName(td-header-menu-wrap-full')[0].style.cssText='visibility:hidden'";
                        injectDeferredObject(html,null);
                 }
           
