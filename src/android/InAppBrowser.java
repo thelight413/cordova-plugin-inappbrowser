@@ -987,7 +987,7 @@ String html = "console.log(document.getElementsByClassName('td-header-wrap td-he
             super.onPageFinished(view, url);
             Log.d("URLisdone",url);
             Log.d("NEWURL",homepage+"#");
-               if(url.equals(homepage)||url.equals(homepage+"#")){
+               /*if(url.equals(homepage)||url.equals(homepage+"#")){
                        String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName('td-header-wrap td-header-style-6')[0].style.cssText = 'display:block!important'";
                        injectDeferredObject(html,null);
                       
@@ -995,7 +995,7 @@ String html = "console.log(document.getElementsByClassName('td-header-wrap td-he
                 }else{
 String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName('td-header-wrap td-header-style-6')[0].style.cssText =  'display:none!important'";
                        injectDeferredObject(html,null);
-                }
+                }*/
           
                   
             // CB-10395 InAppBrowser's WebView not storing cookies reliable to local device storage
