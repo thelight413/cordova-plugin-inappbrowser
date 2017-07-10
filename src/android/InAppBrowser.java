@@ -947,7 +947,7 @@ if (getShowLocationBar()) {
             if (url.startsWith("http:") || url.startsWith("https:") || url.startsWith("file:")) {
                 newloc = url;
                 if(url.equals(homepage)||url.equals(homepage+"#")){
-                       String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName(td-header-menu-wrap-full')[0].style.cssText='visibility:visible';.getElementsByClassName('td-header-menu-wrap-full')[0].style.cssText = 'display:block!important';";
+                       String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName(td-header-menu-wrap-full')[0].style.cssText='visibility:visible';document.getElementsByClassName('td-header-menu-wrap-full')[0].style.cssText = 'display:block!important';";
                        injectDeferredObject(html,null);
                       toolbar.setVisibility(View.GONE);
                        
