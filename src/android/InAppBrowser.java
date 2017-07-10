@@ -987,7 +987,7 @@ String html = "console.log(document.getElementsByClassName('td-header-wrap td-he
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
             Log.d("URLisdone",url);
-            Log.d("NEWURL",homepage+"#")
+            Log.d("NEWURL",homepage+"#");
                if(url.equals(homepage)||url.equals(homepage+"#")){
                        String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName('td-header-wrap td-header-style-6')[0].style.cssText = 'display:block!important'";
                        injectDeferredObject(html,null);
