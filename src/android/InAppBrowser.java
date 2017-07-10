@@ -944,7 +944,7 @@ public class InAppBrowser extends CordovaPlugin {
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
             String newloc = "";
-            NSLog(@"%@",url);
+            Log.d("URLishere",url);
             if (url.startsWith("http:") || url.startsWith("https:") || url.startsWith("file:")) {
                 newloc = url;
                 if(url.equals(homepage)||url.equals(homepage+"#"){
@@ -986,7 +986,7 @@ String html = "console.log(document.getElementsByClassName('td-header-wrap td-he
 
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
-              NSLog(@"%@",url);
+            Log.d("URLisdone",url);
                if(url.equals(homepage)){
                        String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName('td-header-wrap td-header-style-6')[0].style.cssText = 'display:block!important'";
                        injectDeferredObject(html,null);
