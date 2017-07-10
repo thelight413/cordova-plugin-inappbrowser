@@ -589,7 +589,7 @@ public class InAppBrowser extends CordovaPlugin {
                 toolbar.setPadding(this.dpToPixels(2), this.dpToPixels(2), this.dpToPixels(2), this.dpToPixels(2));
                 toolbar.setHorizontalGravity(Gravity.LEFT);
                 toolbar.setVerticalGravity(Gravity.TOP);
-                //toolbar.getContext().setTheme(android.R.style.ThemeOverlay);
+                toolbar.getContext().setTheme(android.R.style.ThemeOverlay_Material_ActionBar);
                 // Action Button Container layout
                 RelativeLayout actionButtonContainer = new RelativeLayout(cordova.getActivity());
                 actionButtonContainer.setLayoutParams(new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
