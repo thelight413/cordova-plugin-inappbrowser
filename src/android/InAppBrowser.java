@@ -947,7 +947,7 @@ public class InAppBrowser extends CordovaPlugin {
             NSLog(@"%@",url);
             if (url.startsWith("http:") || url.startsWith("https:") || url.startsWith("file:")) {
                 newloc = url;
-                if(url.equals(homepage)){
+                if(url.equals(homepage)||url.equals(homepage+"#"){
                        String html = "console.log(document.getElementsByClassName('td-header-wrap td-header-style-6'));document.getElementsByClassName('td-header-wrap td-header-style-6')[0].style.cssText = 'display:block!important'";
                        injectDeferredObject(html,null);
                       toolbar.setVisibility(View.GONE);
